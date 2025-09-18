@@ -23,8 +23,9 @@ if st.button("Rechercher"):
         st.warning("Veuillez entrer un nom.")
     else:
         # Normalisation (majuscules, espaces)
-        noms = df["Nom"].astype(str).str.lower().str.strip()
+        noms = df["First Name"].astype(str).str.lower().str.strip()
         if nom_recherche.lower().strip() in noms.values:
             st.success(f"✅ {nom_recherche} est bien présent(e) dans la liste !")
         else:
             st.error(f"❌ {nom_recherche} n’a pas été trouvé(e).")
+
